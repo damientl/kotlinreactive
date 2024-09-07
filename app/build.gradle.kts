@@ -39,6 +39,9 @@ dependencies {
     implementation("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.mock-server:mockserver-netty:5.11.2")
+    testImplementation("org.mock-server:mockserver-client-java:5.11.2")
+    testImplementation("org.mock-server:mockserver-junit-jupiter:5.11.2")
 }
 
 testing {

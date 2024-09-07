@@ -1,15 +1,16 @@
 package org.example.infrastructure
 
-import kotlinx.coroutines.delay
 import org.example.application.AddItemManager
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class CartController {
-    @PostMapping("/cart/1/item")
-    suspend fun addItemToCart(): String {
-        delay(500)
-        return AddItemManager().addItem()
+class CartController
+    @Autowired
+    constructor(
+        private val addItemManager: AddItemManager,
+    ) {
+        @PostMapping("/cart/1/item")
+        suspend fun addItemToCart(): String = addItemManager.addItem()
     }
-}
