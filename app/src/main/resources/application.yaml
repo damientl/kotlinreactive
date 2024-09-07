@@ -1,0 +1,18 @@
+# R2DBC configuration for H2 database
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb
+    username: sa
+    password: password
+
+  # Optional: JPA configuration for H2 database
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true

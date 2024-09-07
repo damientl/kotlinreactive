@@ -12,6 +12,8 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    id("org.springframework.boot") version "3.3.3"
+    id("io.spring.dependency-management") version "1.1.6"
 }
 
 repositories {
@@ -22,6 +24,19 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    // runtimeOnly("org.postgresql:postgresql")
+    // runtimeOnly("org.postgresql:r2dbc-postgresql")
+
+    implementation("com.h2database:h2:2.1.214")
+    implementation("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")
 }
 
 testing {
