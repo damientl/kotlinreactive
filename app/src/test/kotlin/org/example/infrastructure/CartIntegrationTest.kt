@@ -9,6 +9,7 @@ import org.mockserver.model.HttpResponse
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.web.reactive.server.WebTestClient
+import java.util.concurrent.TimeUnit
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -32,6 +33,7 @@ class CartIntegrationTest {
             ).respond(
                 HttpResponse
                     .response()
+                    .withDelay(TimeUnit.SECONDS, 1)
                     .withStatusCode(200)
                     .withBody("Reservation successful"),
             )

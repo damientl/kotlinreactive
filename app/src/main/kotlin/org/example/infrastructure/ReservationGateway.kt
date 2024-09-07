@@ -1,6 +1,5 @@
 package org.example.infrastructure
 
-import kotlinx.coroutines.delay
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
@@ -13,7 +12,7 @@ class ReservationGateway
         private val webClient: WebClient,
     ) {
         suspend fun reserve(): String {
-            delay(500)
+            // delay(500)
             return webClient
                 .post()
                 .uri("/remote-reservation-system/reserve")
