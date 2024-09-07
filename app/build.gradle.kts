@@ -37,6 +37,8 @@ dependencies {
 
     implementation("com.h2database:h2:2.1.214")
     implementation("io.r2dbc:r2dbc-h2:1.0.0.RELEASE")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 testing {
